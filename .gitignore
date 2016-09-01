@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.db
+Release/
+BaseSfml.VC.VC.opendb
+*.dll
