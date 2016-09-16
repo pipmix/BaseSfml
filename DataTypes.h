@@ -1,0 +1,42 @@
+#pragma once
+
+enum ITEM {
+	IT_WEAPON,
+	IT_MONEY,
+	IT_POTION,
+	IT_EXP,
+	IT_KEY
+};
+
+enum ENEMY {
+	EM_KNIGHT,
+	EM_GOBLIN,
+	EM_WARLOCK
+
+};
+
+enum PLAYER {
+	PL_ROUGE,
+	PL_THEIF,
+	PL_ARCHER
+};
+
+enum PROJECTILE {
+	PJ_BULLET,
+	PJ_EMBER,
+	PJ_MAGIC
+};
+
+enum DAMAGE {
+	DM_BLUNT, 
+	DM_MAGIC,
+	DM_POISON,
+	DM_RANGE,
+	DM_SLICE
+};
+
+enum STATS {
+	ST_ATTACK,
+	ST_SPEED,
+	ST_DAMAGE
+};

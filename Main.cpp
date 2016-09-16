@@ -1,42 +1,24 @@
-#include <SFML\Graphics.hpp>
-using namespace sf;
+#include "Game.h"
 
-sf::RenderWindow renderWindow(sf::VideoMode(320, 200), "Game");
-
-void Init();
-void Update();
-void Draw();
-sf::Texture t;
-sf::Sprite s1;
-
+const int screenW = 640, screenH = 400;
+RenderWindow renderWindow(sf::VideoMode(screenW, screenH), "Game");
 
 int main() {
 
-	Init();
+
+	Game game;
+	game.Load();
 
 	while (renderWindow.isOpen()) {
-		sf::Event e;
+		Event e;
 		while (renderWindow.pollEvent(e)) {
-			if (e.type == sf::Event::Closed)
-				renderWindow.close();
+			if (e.type == Event::Closed) renderWindow.close();
 		}
 
-		renderWindow.clear(sf::Color::Blue);
-		Draw();
+		renderWindow.clear(sf::Color::Black);
+		game.Update();
+		game.Draw();
 		renderWindow.display();
 	}
 	return 0;
-}
-
-void Init() {
-	t.loadFromFile("C:/box/Box Sync/Data/Images/tiles.png");
-	s1.setTexture(t);
-	s1.setTextureRect(IntRect(0, 0, 36, 18));
-
-}
-void Update() {
-
-}
-void Draw(){
-	renderWindow.draw(s1);
 }
